@@ -1,10 +1,89 @@
-/*Quand on sauvegarde les préfixes se mettent automatiquement en fonction de Can I use pour enlever aller dans "Modifier" et décocher "Auto préfixer durant la sauvegarde" et si on veut modifier les paramètres d'autopréfixer "Modifier" > "Paramètre autopréfixer" */
-
-
-/*Pour changer une couleur plus facilement faire clique droit sur la couleur à changer et "Edition rapide" */
-
 body {
     background: #eee;
     font-family: Helvetica, Arial;
     font-size: 14px;
+}
+
+.left{
+    float: left;
+}
+
+/***********
+
+INVENTORY
+
+***********/
+
+.inventory h1{
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 50px;
+}
+
+.inventory ul{
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.inventory ul li{
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    background: white;
+    box-shadow: 3px 3px 8.91px 0.09px rgba(0, 0, 0, 0.15);
+}
+
+.inventory ul li:last-child{
+    border: none;
+}
+
+.inventory ul li.open{
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.inventory ul li:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/***********
+
+CONTENT
+
+***********/
+
+.inventory article{
+    width: 90%;
+    height: 500px;
+    background: white;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.inventory article div.content-item{
+    width: 150px;
+    height: 150px;
+    background: #eee;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.inventory article div.content-item img{
+    width: 100%;
+    height: 100%;
 }
