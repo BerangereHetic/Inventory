@@ -8,18 +8,74 @@ body {
     float: left;
 }
 
+.right{
+    float: right;
+}
+
+a{
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 3px 3px 8.91px 0.09px rgba(0, 0, 0, 0.10);
+}
+
+a:hover{
+    background: rgba(0, 0, 0, 0.15);
+}
+
+input{
+    box-shadow: 3px 3px 8.91px 0.09px rgba(0, 0, 0, 0.10);
+}
+
+input:focus{
+    box-shadow: 3px 3px 8.91px 0.09px rgba(0, 0, 0, 0.25);
+}
+
+/***********
+
+TOP
+
+***********/
+
+h1{
+    width: 700px;
+    text-align: center;
+    margin: auto;
+    margin-top: 60px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 50px;
+}
+
+.connection{
+    width: 400px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.connection a{
+    justify-content: center;
+}
+
+.connection a:nth-child(1){
+    margin-right: 20px;
+}
+
+
 /***********
 
 INVENTORY
 
 ***********/
-
-.inventory h1{
-    text-align: center;
-    margin-top: 60px;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 50px;
-}
 
 .inventory ul{
     width: 90%;
@@ -81,6 +137,7 @@ CONTENT
     background: #eee;
     margin-top: 50px;
     margin-left: 50px;
+    box-shadow: 3px 3px 8.91px 0.09px rgba(0, 0, 0, 0.15);
 }
 
 .inventory article div.content-item img{
