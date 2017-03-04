@@ -18,9 +18,17 @@
 </head>
 
 <body>
+   
+    <section class="top">
+        <div class="connection right">
+            <a href="identification.html">Sign in</a>
+            <a href="identification.html">Sign up</a>
+        </div>
+        <h1>Inventory</h1>
+    </section>
     
     <section class="inventory">
-       <h1>Inventory</h1>
+       
        
        <ul>
            <li class="all open"><h2>All</h2></li>
