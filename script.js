@@ -1,39 +1,33 @@
-window.onload = window.onresize = function(event){
+var article_content = document.querySelector('article.content');
+var add_button = document.querySelector('.add-button');
+var content_form = document.querySelector('.content-form');
+var content_item = document.querySelector('.content-item');
+var content_item_file = document.querySelector('.content-item img');
+var content_item_title = document.querySelector('.content-item-title');
+var content_item_description = document.querySelector('.content-item-description');
+
+add_button.addEventListener('click', function(event){
     event.preventDefault();
-    var canvas        = document.querySelector('canvas'),
-        context       = canvas.getContext('2d'),
-        sizeX         = window.innerWidth,
-        sizeY         = window.innerHeight,
-        centerX       = sizeX   / 2,
-        centerY       = sizeY   / 2,
-        oneQuarterX   = centerX / 2,
-        oneQuarterY   = centerY / 2,
-        threeQuarterX = oneQuarterX * 3,
-        threeQuarterY = oneQuarterY * 3,
-        randomPos     = Math.random()*100;
+    content_form.classList.add('open');
     
-    canvas.width = sizeX;
-    canvas.height = sizeY;
+});
+
+if(!content_form.classList.contains('open')){
+    content_form.classList.remove('open');
     
-    context.fillStyle = '#ecf0f1';
-    context.fillRect(0, 0, sizeX, sizeY);
-    
-    context.globalCompositeOperation = 'destination-out';
-    
-    context.beginPath();
-    context.arc(400, threeQuarterY-50, 75, 0, 2*Math.PI, false);
-    context.fill();
-    
-    context.beginPath();
-    context.moveTo(threeQuarterX, threeQuarterY-200);
-    context.lineTo(threeQuarterX-50, threeQuarterY+25);
-    context.lineWidth = 20;
-    context.strokeStyle = 'orange';
-    context.stroke();
-    
-    context.beginPath();
-    context.moveTo(oneQuarterX-100-90, oneQuarterY+30+40);
-    context.lineTo(oneQuarterX-200-90, oneQuarterY-100+40);
-    context.lineTo(oneQuarterX-90, oneQuarterY-100+40);
-    context.fill();
 }
+
+content_item_title.addEventListener('click', function(event){
+    event.preventDefault();
+    this.setAttribute('contenteditable', 'true');
+});
+
+content_item_description.addEventListener('click', function(event){
+    event.preventDefault();
+    this.setAttribute('contenteditable', 'true');
+});
+
+content_item_file.addEventListener('click', function(event){
+    event.preventDefault();
+    
+});
