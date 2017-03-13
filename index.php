@@ -1,3 +1,42 @@
+<?
+
+    include 'includes/config.php';
+    include 'includes/handle_form_insert.php';
+    include 'includes/handle_form_update.php';
+
+    $query = $pdo->query('SELECT * FROM contents');
+    $contents = $query->fetchAll();
+
+    echo '<pre>';
+    print_r($contents);
+    print_r($error_messages);
+    print_r($success_messages);
+    echo '</pre>';
+
+    // Routing
+    $q = $_GET['q'];
+
+    if(($q === '') || ($q === 'identification'))
+    {
+        $page = 'identification';
+    }
+    else if($q === 'inventory')
+    {
+        $page = 'inventory';
+    }
+    else if($q === 'modification')
+    {
+        $page = 'form_modify';
+    }
+    else
+    {
+//        $page = '404';
+        echo "no page sorry";
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,36 +57,9 @@
 </head>
 
 <body>
-   
-    <section class="top">
-        <div class="connection right">
-            <a href="identification.html">Sign in</a>
-            <a href="identification.html">Sign up</a>
-        </div>
-        <h1>Inventory</h1>
-    </section>
-    
-    <section class="inventory">
-       
-       
-       <ul>
-           <li class="all open"><h2>All</h2></li>
-           <li class="albums"><h2>Albums</h2></li>
-           <li class="drawings"><h2>Drawings</h2></li>
-           <li class="pictures"><h2>Pictures</h2></li>
-           <li class="bookmarks"><h2>Bookmarks</h2></li>
-       </ul>
-       
-       <article class="content">
-           <div class="content-item content-item-$">
-               <img src="images/favicons/apple-touch-icon.png" alt="Inventory element">
-               <p class="content-item-title">Mon premier dessin</p>
-               <p class="content-item-description">Joli soleil et des fleurs partout vive les licornes on gambade dans les prés hourra hourra </p>
-           </div>
-           <div class="add-content-item">+</div>
-       </article>
-        
-    </section>
+    <?
+    include 'views/pages/'.$page.'.php';
+    ?>
     
     <script type="text/javascript" src="script.js"></script>
 </body>
